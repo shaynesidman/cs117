@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!-- 
+ **********************************************************
+
+             TUFTS CS 117 HOMEWORK ASSIGNMENT
+
+        Fill in your name, e-mail and answers to questions
+        in the sections provided below.
+
+          All questions are marked up: <li class="q">
+          All answers are marked up:   <li class="a">
+
+
+     PLEASE DO NOT MODIFY ANY THING OTHER THAN THE 
+     NAME, E-MAIL, AND ANSWER FIELDS (you may also add
+     css declarations in the <head> if you need them,
+     but usually you won't.
+
+ **********************************************************
+ -->
+
+
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<title>Questions for: Tufts CS 117 Assignment Reading Assignment &#8212; End to End Arguments</title>
+<link rel="stylesheet" type="text/css" href="https://www.cs.tufts.edu/comp/117/style/homework.css" >
+</head>
+
+<body class="homework">
+
+
+<!-- ******************************************************
+	   YOU MUST FILL IN YOUR NAME, UTLN AND EMAIL BELOW!!
+         (You may copy this from an earlier assignment
+                         if you like)
+
+     ****************************************************** -->
+
+
+<div class="student">
+<p>
+<span class="label">Student name: </span>
+Shayne Sidman
+<br>
+
+<span class="label">LOGIN: </span>
+ssidma01
+<br>
+
+<span class="label">E-mail: </span>
+<!-- DON'T FORGET UP UPDATE THE MAILTO: URI BELOW ALONG WITH
+     YOUR EMAIL IN THE ANCHOR.  IT SHOULD LOOK LIKE:
+ <a href="mailto:lady.gaga@cs.tufts.edu">lady.gaga@cs.tufts.edu</a>
+--> 
+
+<a href="mailto:shayne.sidman@tufts.edu">shayne.sidman@tufts.edu</a>
+<br>
+</p>
+</div>
+
+
+
+
+
+<div class="UpperLeftHeader">
+<p>Tufts CS 117 (Fall 2025):
+<br>
+Internet-scale Distributed Systems
+</p>
+</div>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - -
+		HOMEWORK TITLE
+  - -  - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+<div class="headerdiv">
+<h1>
+Tufts CS 117 Assignment:<br>End-to-end Arguments
+<br>
+Questions
+</h1>
+</div>
+
+<!-- ******************************************************
+
+              PLEASE ANSWER QUESTIONS IN THE SECTIONS
+	      LABELED class="a" (for answer)
+
+     ****************************************************** -->
+
+
+
+<div class="main">
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - -
+		QUESTION
+  - -  - - - - - - - - - - - - - - - - - - - - - - -->
+ <div class="qa">
+<p>You are welcome to write as much as you like, but this is not intended to be a very time-consuming assignment.  In most cases, each question can be answered in one or a few sentences, but it is essential that you demonstrate strong understanding. Try to get to the essence quickly. If you want to provide supporting detail, that's fine too.</p>
+<p>
+  Note that the end-to-end paper discusses, starting in its abstract, an end-to-end <em>design principle</em>, and many of these questions are about that principle. Make sure you understand what the principle is before attempting to answer these questions. Indeed, it's worth returning to the abstract after you've read the whole paper, but the abstract emphasizes only some of what's important. We will also discuss the principle in detail in class, and you may update your answers after that discussion.  Indeed, don't worry if there are a few questions that you don't know how to answer at all  until after the class discussion.
+</p>
+
+<ol class="qa">
+<li class="q">
+Briefly summarize the "end-to-end" principle in your own words. Why does it matter? In what situations is it applicable? What does it say about the pros and cons of doing other sorts of checking and recovery (I.e. other than end-to-end)?  For full credit it must be clear when checking is required, when it's optional, and why.
+</li>
+<li class="a">
+The end-to-end argument proposes that some systems would benefit from only implementing certain functions at the ends of the system, rather than lower levels or at all connections of a system. Since these systems require these functions at the ends anyway to ensure correctness, implementing them at lower levels may lead to system-wide delays and other costs that do not offer a great benefit to correctness. These functions may only increase reliability. In other words, the principle states that checking at the ends is required, but checking at low levels is optional. Acknowledging and even employing this principle can save countless resources for both users and providers. Less space is required for functions at lower levels, making them more lightweight. Redundant checks are not performed between the ends of the system, saving time for users. Less money is required to maintain lower levels of the system. However, not all systems are great candidates to employ the end-to-end principle. Only systems that require checking at their ends can leverage the end-to-end principle. Additional checking may increase performance by reducing the frequency of retries, for example, but it is not a sufficient replacement for checking at the ends. Furthermore, too much checking at low levels of the system can increase overhead, but too little can hurt efficiency.
+</li>
+
+<li class="q">The end-to-end paper describes a situation at MIT in which end-to-end checking was not done, and
+the result was a system that did not work well enough. What was the problem, and how would more attention to
+the end-to-end argument have helped?
+</li>
+<li class="a">The problem with the situation at MIT was that the programmers made the assumption that the network was providing reliable transmission (because they assumed that coruption of bits during transmission was the greatest threat to communication), but failed to account for the fact that the data was unprotected when stored in each gateway. If the programmers had paid more attention to the end-to-end paper, then they would have realized that low-level checks are not sufficient to ensure reliability. Sure, these checks can boost performance in some scenarios, but corruption/errors can happen at any point in the process, and low-level checks cannot verify the correctness of the data in transmission at many of these points. Therefore, regardless of whether low-level checks are implemented, the end-to-end check is necessary to ensure correctness and to ensure that the data is the same at the starting and ending point.</li>
+
+<li class="q">The end-to-end principle discusses the impact of various design choices on system <em>correctness</em>. What are the implications of attention to the end-to-end <em>principle</em> for system performance? Briefly discuss.</li>
+<li class="a">Choosing the end-to-end principle for system correctness removes the corresponding correctness checks from lower levels and pushes them to the ends of the system. However, correctness is only one factor in a system. Strict adherence to the end-to-end principle can, for example, cause performance to suffer. Too few checks on lower, intermediate levels could lead to frequent retries and subsequent poor performance. But, too many reliability checks can increase overhead and add delay during transmission, leading to a large degree of redundancy (in a system with many low-level checks). Therefore, a balance between these two considerations may optimal for overall success. Every system is different, so the correct balance ultimately comes down to the system's goals and requirements.</li>
+<li class="q">If a networking system with multiple "hops" does error checking and recovery on some of the individual links, does that violate the end-to-end principle? <em>Briefly</em> explain why or why not. Remember: this question is not asking whether such checking is ever a good idea (though you might want to comment on that too), this question is asking what the <em>principle</em> says, if anything, about such checking.</li>
+<li class="a">No, a networking system with error checking on individual links does not violate the end-to-end principle. As discussed in the previous question, perhaps a healthy balance between intermediate checking on individual links and on system ends may be optimal (with the balance varying by system). That being said, the end-to-end principle suggests that these checks on individual links may not be effective in ensuring correctness, and that regardless of whether or not they are implemented, checks must be performed on the ends. The principle does not set any bounds on the number of checks to be performed at low levels of the system, but rather suggests that they may not be worth it when considering their cost of implementation.</li>
+
+<li class="q">Do systems designed with attention to the end-to-end principle tend to be simpler or more complex, I.e. compared to otherwise similar systems designed without attention to the principle? Briefly discuss.</li>
+<li class="a">In general, systems designed with attention to the end-to-end principle are often simpler than those designed without attention to the principle. This is because these systems tend to forgo implementing low-level functions that must be placed at the ends of a system anyway. Therefore, these low levels tend to only posses functions that can facilitate performance, but not correctness. However, this implies that correctness logic is pushed to the ends of the system, which can therefore be more complex than lower levels. From an overall volume standpoint (i.e. the quantity of functions distributed throughout the entire system), systems designed with attention to the end-to-end principle are simpler since they avoid redundancy from a correctness perspective.</li>
+
+<li class="q">Consider the postal system. Letters are typically addressed, mailed and delivered without
+explicit acknowledgement. How, if at all,
+does the "end-to-end" argument apply to the postal system?</li>
+<li class="a">In the U.S. postal system, what ultimately matters to both senders and recipients is sending messages and ensuring that they are delivered to the recipient. Sure, the postal system could mimic the behavior of online retailers such as Amazon (which would be an example of a system that is not so end-to-end), who alert users when their package is shipped, arrived at the distribution center, out for delivery, etc., but the ends of the postal system are the most important. Implementing low-level functions such as those previously listed would not change the intended function of the system and would require more information from senders and recipients and could even increase the cost of stamps, which many may see as purposeless. Therefore, these low-level functions are left out and the end-to-end principle is employed to send messages.</li>
+
+
+<li class="q">Paul Baran explains why packet switching could not have
+been successful in an all-analog world. Why was digital messaging a
+necessary pre-requisite for the adoption of packet switching? Be
+specific.</li>
+<li class="a">In the analog world that existed before digital messaging, successive links/hops between networks would degrade the quality of a message/packets, and after several links, the message may be unintelligibile. Baran describes analog as a videotape of a videotape and so on, meaning quality is sacrificed progressively. With digital messaging, the signal could be cleaned up to preserve quality and enable propagation through many different connections, thereby enabling packets to be transmitted further much more reliably. This allowed for Baran's vision of providing so much communications with such a degree of redundancy to people that they won't know what to do with it.</li>
+
+<li class="q">What reason does Baran give why packet switching can
+make a network achieve similar performance at less cost than a
+circuit-switched network?</li>
+
+<li class="a">In a circuit-switched network, like the one used by the telephone network, both ends of the network connection must be operational and data must flow along one continuous path between the ends. This required all parts of the network to be near perfect. With packet switching, packets can take any path from sender to receiver, and because of this, there is a great degree of redundancy in the network. If one path/component from sender to receiver is non-operational, the packets can flow down another path. Therefore, failure tolerance is much higher in such a network, so cheaper components can be comfortably used without worrying about the system becoming compromised if some of the components fail/break.</li>
+
+<li class="q">What reaction did Baran get from the experts at AT&amp;T when he proposed packet-switching? Why?</li>
+<li class="a">The experts at AT&amp;T--who were experts in analog--couldn't comprehend what Baran was proposing with packet switching and digital circuits, and so they were incredulous at Baran's work. However, the people at Bell Labs--the research and development branch of AT&amp;T--were positive and interested in what Baran was doing since they had done some similar work with the T1 and could comprehend his work.</li>
+
+<li class="q">Why did or didn't Baran seek patents on his work?</li>
+<li class="a">Baran never sought patents on his work because one of his primary objectives was to broaden access so that more people could use it. To me, this feels like Metcalfe's Law since Baran's ultimate goal was to provide people with such broad communication abilities. Baran also mentioned that the time that he spent working on this went by so quickly.</li>
+
+<li class="q">(optional: for fun not credit) What efforts were made to keep this technology secret from the "enemy" in the Soviet Union? Why?</li>
+<li class="a">There was virtually no effort to keep the technology secret from the "enemy" in the Soviet Union. This is to ensure that both countries had the ability to retaliate (similar to Mutually Assured Destruction with missiles in the Cold War) so that neither side would use it. It was just there to ensure that the war was not lopsided in favor of one country because then something could actually happen. </li>
+
+
+
+</ol>
+
+</div>
+</div>
+</body>
+</html>
