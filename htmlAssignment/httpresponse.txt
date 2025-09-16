@@ -1,0 +1,125 @@
+HTTP/1.1 200 OK
+Date: Sun, 14 Sep 2025 21:00:01 GMT
+Server: Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.0.7 mod_wsgi/4.7.1 Python/3.9
+Last-Modified: Sun, 14 Sep 2025 20:43:45 GMT
+ETag: "1c34-63ec8f1700cfb"
+Accept-Ranges: bytes
+Content-Length: 7220
+Content-Type: text/html; charset=UTF-8
+Strict-Transport-Security: max-age=15552000
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Frank Lloyd Wright Fan Page</title>
+        <link rel="stylesheet" href="styles.css" >
+    </head>
+    <body class="container">
+        <div class="horizontal-flex-between">
+            <h1>Frank Lloyd Wright Fan Page!!</h1>
+            <img 
+                src="images/Frank.jpg" 
+                alt="Frank Lloyd Wright" 
+                class="image"
+            >
+        </div>
+        <div>
+            <h2>Information</h2>
+            <div class="info-box">
+                <p>Many are familiar with <span id="frank">Frank Lloyd Wright</span> (the Tom Brady of architecture some may say) from his extensive architecture portfolio which includes over 1,000 structures over a 70-year period. His Fallingwater piece has been dubbed "the best all-time work of American architecture". Whether or not you agree, there is no denying that his work is some of the most influential of all time. On this page, we will examine some of his pieces and goggle over them.</p>
+                <p>Much of the information from this page was fetched from Frank's <a href="https://en.wikipedia.org/wiki/Frank_Lloyd_Wright">Wikipedia page</a>.</p>
+            </div>
+        </div>
+        <div>
+            <h2>Overview</h2>
+            <div class="info-box">
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Year</th>
+                        <th>Cost</th>
+                        <th>Adjusted Cost</th>
+                    </tr>
+                    <tr>
+                        <td>Home and Studio</td>
+                        <td>Oak Park, Illinois</td>
+                        <td>1889</td>
+                        <td>$5,300</td>
+                        <td>$186,103.74</td>
+                    </tr>
+                    <tr>
+                        <td>Fallingwater</td>
+                        <td>Mill Run, Pennsylvania</td>
+                        <td>1939 (guest wing)</td>
+                        <td>$155,000</td>
+                        <td>$2.7 million</td>
+                    </tr>
+                    <tr>
+                        <td>Taliesin West</td>
+                        <td>Scottsdale, Arizona</td>
+                        <td>1937</td>
+                        <td>$3,100 (for land)</td>
+                        <td>$69,545.06</td>
+                    </tr>
+                    <tr>
+                        <td>Guggenheim Museum</td>
+                        <td>New York, New York</td>
+                        <td>1959</td>
+                        <td>$2 million</td>
+                        <td>$22.2 million</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <h2>Work</h2>
+            <div id="work" class="info-box">
+                <div class="horizontal-flex-between">
+                    <img 
+                        src="images/HomeAndStudio.jpg" 
+                        alt="HomeAndStudio"
+                        class="image"
+                    >
+                    <div>
+                        <h3>Home and Studio</h3>
+                        <p class="grow right">The <a href="https://en.wikipedia.org/wiki/Frank_Lloyd_Wright_Home_and_Studio">Frank Lloyd Wright Home and Studio</a> was Frank and his family's humble abode for more than two decades. Throughout their tenure at this home, it underwent many expansions. It is designed in Prairie style. It was bought in 1889 after Wright married Kitty Tobin, and they raised 6 children there together.</p>
+                    </div>
+                </div>
+                <div class="horizontal-flex-between">
+                    <div>
+                        <h3>Fallingwater</h3>
+                        <p class="grow left"><a href="https://en.wikipedia.org/wiki/Fallingwater">Fallingwater</a>, as mentioned above, is known as one of the best pieces of architecture in American history. Frank developed it for Liliane and Edgar J. Kaufmann Sr. as a weekend retreat. Yes, this is the very same Kaufmann that owns Kaufmann's Department Store in Pittsburgh. The getaway home is built directly over a waterfall and incorporates it into the house. I'm sure you can imagine that this came with its fair share of problems. Contractors believed that more steel reinforcement was required for certain parts of the house, and when they secretly added reinforcement after Wright rejected it, they were sent away. Wright then wrote to Kaufmann furiously stating that he put so much into the house and if he didn't have his confidence, then "to hell with the whole thing". I would most definitely be lost without this wonderful yet apparently contentious piece of architecture.</p>
+                    </div>
+                    <img 
+                        src="images/Fallingwater.jpeg" 
+                        alt="Fallingwater"
+                        class="image"
+                    >
+                </div>
+                <div class="horizontal-flex-between">
+                    <img 
+                        src="images/TaliesinWest.jpg"
+                        alt="TaliesinWest"
+                        class="image"
+                    >
+                    <div>
+                        <h3>Taliesin West</h3>
+                        <p class="grow right"><a href="https://en.wikipedia.org/wiki/Taliesin_West">Taliesin West</a> is another studio and home created by Wright which is located in Scottsdale, Arizona. It gets its name from Wright's Taliesin studio in Spring Green, Wisconsin. I am honestly not sure how Wright decides on the locations for his studios because he seems to be jumping around the country by I digress. Wright used this studio as his winter one as well as his winter home. Ah I see now, my grandparents also used to go to Arizona during the winter but probably didn't live in a house as cool as this one. It was initially developed by Wright's apprentices and is now maintained by the Frank Lloyd Wright Foundation.</p>
+                    </div>
+                </div>
+                <div class="horizontal-flex-between">
+                    <div>
+                        <h3>Guggenheim Museum</h3>
+                        <p class="grow left">The <a href="https://en.wikipedia.org/wiki/Solomon_R._Guggenheim_Museum">Guggenheim Museum</a> is an art museum located on 5th Avenue in New York City. It was designed by the one and only Frank Lloyd Wright and developed over a period of 15 years. It houses a collection of Impressionist, Post-Impressionist, and early Modern and Contemporary art. The six-story gallery main gallery is said to look like a bowl, and I'm pretty sure I ate my Lucky charms out of a very similar looking shape earlier this morning. Nonetheless, its novelty along with is location make it one of the most interesting buildings in the Big Apple.</p>
+                    </div>
+                    <img 
+                        src="images/GuggenheimMuseum.jpg"
+                        alt="GuggenheimMuseum"
+                        class="image"
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
